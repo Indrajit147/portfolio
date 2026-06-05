@@ -132,7 +132,7 @@ export const portfolio = {
 
   stats: [
     { label: "Research papers", value: 1, suffix: "+" },
-    { label: "Projects completed", value: 9, suffix: "+" },
+    { label: "Featured projects", value: 5, suffix: "+" },
     { label: "ML certifications", value: 2, suffix: "+" },
     { label: "Research areas", value: 4, suffix: "+" }
   ] satisfies Stat[],
@@ -179,23 +179,19 @@ export const portfolio = {
 
   projects: [
     {
-      title: "Smart Info Assistant",
-      summary:
-        "An AI-powered summarization assistant that combines OpenAI GPT-4o, Wikipedia, and DuckDuckGo to produce structured summaries with source awareness.",
-      techStack: ["Python", "LangChain", "OpenAI API", "Streamlit", "Pydantic"],
-      categories: ["AI Agents", "NLP", "Python", "Web App"],
-      status: "Prototype",
-      impact: "Turns broad research queries into clean, reusable markdown reports.",
-      links: [{ label: "Profile reference", href: "https://www.linkedin.com/in/indrajit147" }]
-    },
-    {
       title: "Real-Time Fire Detection System",
       summary:
         "A webcam-based fire detection system with visual and audio alerts for rapid response scenarios.",
       techStack: ["YOLO", "OpenCV", "Streamlit", "pygame", "Python"],
       categories: ["Computer Vision", "Python", "Web App"],
       status: "Completed",
-      impact: "Applies object detection to a safety-critical real-time alert workflow."
+      impact: "Applies object detection to a safety-critical real-time alert workflow.",
+      links: [
+        {
+          label: "GitHub repository",
+          href: "https://github.com/Indrajit147/Real-Time-Fire-Detection"
+        }
+      ]
     },
     {
       title: "Face Recognition System",
@@ -213,25 +209,13 @@ export const portfolio = {
       techStack: ["Python", "OpenCV", "MediaPipe", "PyAutoGUI"],
       categories: ["Computer Vision", "Python", "Human-Computer Interaction"],
       status: "Completed",
-      impact: "Explores accessible interaction through camera-based hand tracking."
-    },
-    {
-      title: "Hospital Management System",
-      summary:
-        "A C-based patient and file management system created as a KUET course project.",
-      techStack: ["C", "File Handling", "Pointers", "Procedural Programming"],
-      categories: ["Systems", "Academic"],
-      status: "Completed",
-      impact: "Strengthened fundamentals in structured programming and data management."
-    },
-    {
-      title: "PDF Summarizer App",
-      summary:
-        "A document summarization application concept for extracting key points from long PDF content.",
-      techStack: ["Python", "NLP", "LLMs", "Streamlit"],
-      categories: ["NLP", "Python", "Web App"],
-      status: "In progress",
-      impact: "Supports faster review of study materials, papers, and long-form documents."
+      impact: "Explores accessible interaction through camera-based hand tracking.",
+      links: [
+        {
+          label: "GitHub repository",
+          href: "https://github.com/Indrajit147/finger-controlled-mouse"
+        }
+      ]
     },
     {
       title: "CareerMate AI Multi-Agent System",
@@ -240,25 +224,28 @@ export const portfolio = {
       techStack: ["Python", "OpenAI Agents", "Tools", "Guardrails"],
       categories: ["AI Agents", "Python"],
       status: "In progress",
-      impact: "Explores coordinated agent workflows for practical career decisions."
+      impact: "Explores coordinated agent workflows for practical career decisions.",
+      links: [
+        {
+          label: "GitHub repository",
+          href: "https://github.com/Indrajit147/Multi-Agent-Career-Advisor-CareerMate"
+        }
+      ]
     },
     {
-      title: "Travel Planning Assistant",
+      title: "NewsSense: AI News Intelligence Agent",
       summary:
-        "An AI travel planner using agents, tools, and guardrails to shape safer and more useful itinerary suggestions.",
-      techStack: ["OpenAI Agents", "Python", "Tool Calling", "Guardrails"],
-      categories: ["AI Agents", "Python"],
+        "An AI news intelligence agent designed to collect, reason over, and organize news signals into more useful insights.",
+      techStack: ["Python", "AI Agents", "OpenAI API", "News Intelligence", "Tool Calling"],
+      categories: ["AI Agents", "NLP", "Python"],
       status: "Prototype",
-      impact: "Demonstrates controlled agentic planning for real-world user workflows."
-    },
-    {
-      title: "Bangla Privacy Rewrite Dataset Generator",
-      summary:
-        "A dataset generation workflow for privacy-preserving rewriting in Bengali text.",
-      techStack: ["Bangla NLP", "LLMs", "Python", "Dataset Curation"],
-      categories: ["Research", "NLP", "Python"],
-      status: "Research build",
-      impact: "Supports low-resource privacy research and the PriBan research direction."
+      impact: "Helps transform scattered news information into structured intelligence for faster understanding.",
+      links: [
+        {
+          label: "GitHub repository",
+          href: "https://github.com/Indrajit147/AI-News-Intelligence-Agent-NewsSense"
+        }
+      ]
     }
   ] satisfies Project[],
 
@@ -283,11 +270,6 @@ export const portfolio = {
 
   timeline: [
     {
-      date: "2024",
-      title: "Started KUET project portfolio",
-      detail: "Built a Hospital Management System in C while strengthening programming fundamentals."
-    },
-    {
       date: "Mar 2025",
       title: "Computer vision projects",
       detail: "Completed real-time face recognition and finger-controlled mouse projects using webcam pipelines."
@@ -299,8 +281,13 @@ export const portfolio = {
     },
     {
       date: "Jun 2025",
-      title: "Smart Info Assistant",
-      detail: "Built an AI summarization assistant with OpenAI, web sources, structured output, and report generation."
+      title: "CareerMate AI",
+      detail: "Started building a multi-agent career advisor using coordinated AI agents, tools, and guardrails."
+    },
+    {
+      date: "2025",
+      title: "NewsSense",
+      detail: "Added an AI news intelligence agent to the project portfolio."
     },
     {
       date: "2025",
