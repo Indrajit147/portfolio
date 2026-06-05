@@ -104,22 +104,18 @@ export function Navbar({ items }: { items: NavigationItem[] }) {
 }
 
 function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <button
       type="button"
+      suppressHydrationWarning
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground shadow-sm transition hover:border-primary/50"
     >
-      {mounted && isDark ? <Sun aria-hidden size={18} /> : <Moon aria-hidden size={18} />}
+      {isDark ? <Sun aria-hidden size={18} /> : <Moon aria-hidden size={18} />}
     </button>
   );
 }

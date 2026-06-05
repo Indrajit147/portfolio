@@ -63,7 +63,7 @@ body {
   }
 
   .card {
-    @apply rounded-lg border border-border/80 bg-card/82 shadow-soft backdrop-blur;
+    @apply rounded-lg border border-border/80 bg-card/80 shadow-soft backdrop-blur;
   }
 
   .pill {

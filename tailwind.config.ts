@@ -26,7 +26,7 @@ const config: Config = {
         glow: "0 0 0 1px rgba(20, 184, 166, 0.16), 0 24px 80px -48px rgba(20, 184, 166, 0.65)"
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "ui-sans-serif", "system-ui"]
+        sans: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "Arial", "sans-serif"]
       }
     }
   },

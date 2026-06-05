@@ -20,7 +20,7 @@ export function Testimonials({ endorsements }: { endorsements: Endorsement[] }) 
             <Reveal key={endorsement.name} delay={index * 0.05} className="card p-6">
               <Quote aria-hidden className="text-primary" size={24} />
               <blockquote className="mt-5 leading-7 text-muted-foreground">
-                "{endorsement.quote}"
+                {endorsement.quote}
               </blockquote>
               <p className="mt-5 font-bold text-foreground">{endorsement.name}</p>
               <p className="mt-1 text-sm text-muted-foreground">{endorsement.role}</p>

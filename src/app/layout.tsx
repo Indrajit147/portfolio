@@ -1,13 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap"
-});
 
 const siteUrl = "https://indrajit147.github.io/portfolio/";
 
@@ -69,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
