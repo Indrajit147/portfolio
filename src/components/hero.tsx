@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import type { Profile, Stat } from "@/content/portfolio";
 import { AnimatedCounter } from "@/components/animated-counter";
+import { withBasePath } from "@/lib/base-path";
 
 export function Hero({ profile, stats }: { profile: Profile; stats: Stat[] }) {
   return (
@@ -132,7 +133,7 @@ export function Hero({ profile, stats }: { profile: Profile; stats: Stat[] }) {
             <div className="absolute -inset-4 rounded-[2rem] border border-primary/20 bg-primary/10 blur-2xl" />
             <div className="relative overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-glow">
               <Image
-                src={profile.portrait}
+                src={withBasePath(profile.portrait)}
                 alt="Formal portrait of Indrajit Gupta"
                 width={720}
                 height={840}
