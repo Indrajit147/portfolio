@@ -132,7 +132,7 @@ export const portfolio = {
 
   stats: [
     { label: "Research papers", value: 1, suffix: "+" },
-    { label: "Featured projects", value: 5, suffix: "+" },
+    { label: "Featured projects", value: 6, suffix: "+" },
     { label: "ML certifications", value: 2, suffix: "+" },
     { label: "Research areas", value: 4, suffix: "+" }
   ] satisfies Stat[],
@@ -201,6 +201,21 @@ export const portfolio = {
       categories: ["Computer Vision", "Python"],
       status: "Completed",
       impact: "Demonstrates end-to-end biometric recognition with real-time inference."
+    },
+    {
+      title: "Insurance Cost Predictor",
+      summary:
+        "A machine learning project for estimating insurance costs from user and health-related features.",
+      techStack: ["Python", "Machine Learning", "Regression", "Pandas", "Scikit-learn"],
+      categories: ["Machine Learning", "Python", "Web App"],
+      status: "Completed",
+      impact: "Shows practical regression modeling for real-world cost estimation and decision support.",
+      links: [
+        {
+          label: "GitHub repository",
+          href: "https://github.com/Indrajit147/insurance-cost-predictor"
+        }
+      ]
     },
     {
       title: "Finger Controlled Mouse",
