@@ -32,6 +32,12 @@ The static export is generated in `out/`.
 https://indrajit147.github.io/portfolio/
 ```
 
+You can also run the publish helper after creating the GitHub repository:
+
+```powershell
+.\scripts\publish-github.ps1
+```
+
 ## Edit Content
 
 All profile, project, research, skill, achievement, timeline, and contact content lives in:
