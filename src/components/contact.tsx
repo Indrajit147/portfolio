@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Facebook, Github, GraduationCap, Linkedin, Mail, Network, Send } from "lucide-react";
 import type { Profile } from "@/content/portfolio";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -95,6 +95,33 @@ export function Contact({ profile }: { profile: Profile }) {
               >
                 <Github aria-hidden size={18} />
                 GitHub
+              </a>
+              <a
+                href={profile.links.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring inline-flex items-center gap-3 rounded-md border border-border bg-muted/35 px-4 py-3 text-sm font-bold text-foreground transition hover:border-primary/50"
+              >
+                <Facebook aria-hidden size={18} />
+                Facebook
+              </a>
+              <a
+                href={profile.links.googleScholar}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring inline-flex items-center gap-3 rounded-md border border-border bg-muted/35 px-4 py-3 text-sm font-bold text-foreground transition hover:border-primary/50"
+              >
+                <GraduationCap aria-hidden size={18} />
+                Google Scholar
+              </a>
+              <a
+                href={profile.links.researchGate}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring inline-flex items-center gap-3 rounded-md border border-border bg-muted/35 px-4 py-3 text-sm font-bold text-foreground transition hover:border-primary/50"
+              >
+                <Network aria-hidden size={18} />
+                ResearchGate
               </a>
             </div>
           </Reveal>

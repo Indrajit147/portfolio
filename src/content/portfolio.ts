@@ -16,6 +16,9 @@ export type Profile = {
     email: string;
     github: string;
     linkedin: string;
+    facebook: string;
+    googleScholar: string;
+    researchGate: string;
     resume: string;
   };
 };
@@ -96,6 +99,9 @@ export const portfolio = {
       email: "mailto:indrajitgupta147@gmail.com",
       github: "https://github.com/Indrajit147",
       linkedin: "https://www.linkedin.com/in/indrajit147",
+      facebook: "https://www.facebook.com/indrajit.gupta.98434",
+      googleScholar: "https://scholar.google.com/citations?user=d61a6hkAAAAJ&hl=en",
+      researchGate: "https://www.researchgate.net/profile/Indrajit-Gupta-3?ev=hdr_xprf",
       resume: "https://www.linkedin.com/in/indrajit147"
     }
   } satisfies Profile,

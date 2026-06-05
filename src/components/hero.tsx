@@ -2,7 +2,18 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail, Microscope, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Facebook,
+  Github,
+  GraduationCap,
+  Linkedin,
+  Mail,
+  Microscope,
+  Network,
+  Sparkles
+} from "lucide-react";
 import type { Profile, Stat } from "@/content/portfolio";
 import { AnimatedCounter } from "@/components/animated-counter";
 
@@ -71,6 +82,33 @@ export function Hero({ profile, stats }: { profile: Profile; stats: Stat[] }) {
               aria-label="Open LinkedIn profile"
             >
               <Linkedin aria-hidden size={19} />
+            </a>
+            <a
+              href={profile.links.facebook}
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-card text-foreground transition hover:border-primary/50"
+              aria-label="Open Facebook profile"
+            >
+              <Facebook aria-hidden size={19} />
+            </a>
+            <a
+              href={profile.links.googleScholar}
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-card text-foreground transition hover:border-primary/50"
+              aria-label="Open Google Scholar profile"
+            >
+              <GraduationCap aria-hidden size={19} />
+            </a>
+            <a
+              href={profile.links.researchGate}
+              target="_blank"
+              rel="noreferrer"
+              className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-card text-foreground transition hover:border-primary/50"
+              aria-label="Open ResearchGate profile"
+            >
+              <Network aria-hidden size={19} />
             </a>
             <a
               href={profile.links.resume}
