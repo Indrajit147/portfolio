@@ -56,7 +56,11 @@ export function Research({ research }: { research: ResearchItem[] }) {
                   <h3 className="mt-3 text-2xl font-black leading-tight text-foreground">
                     {selected.title}
                   </h3>
-                  <p className="mt-3 text-sm font-semibold text-primary">{selected.status}</p>
+                  {selected.status ? (
+                    <p className="mt-3 text-sm font-semibold text-primary">
+                      {selected.status}
+                    </p>
+                  ) : null}
                   <p className="mt-5 leading-7 text-muted-foreground">{selected.summary}</p>
                 </div>
               </div>

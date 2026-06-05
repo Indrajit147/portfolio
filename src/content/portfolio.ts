@@ -36,7 +36,7 @@ export type SkillGroup = {
 
 export type ResearchItem = {
   title: string;
-  status: string;
+  status?: string;
   venue: string;
   summary: string;
   keywords: string[];
@@ -139,7 +139,6 @@ export const portfolio = {
   research: [
     {
       title: "PriBan: A Benchmark Dataset and Modeling Framework for Privacy Preservation in Bengali Texts",
-      status: "Publication listed on LinkedIn with IEEE status dated December 20, 2025",
       venue: "Bangla NLP, privacy preservation, low-resource language research",
       summary:
         "PriBan focuses on privacy-preserving Bengali text rewriting, exploring approaches that delete sensitive expressions or obscure private details while preserving natural language quality and utility.",
