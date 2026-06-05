@@ -1,0 +1,9 @@
+{
+  "name": "Indrajit Gupta Portfolio",
+  "short_name": "Indrajit",
+  "description": "Portfolio of Indrajit Gupta, KUET ECE student, ML/AI enthusiast, and researcher.",
+  "start_url": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f766e"
+}
