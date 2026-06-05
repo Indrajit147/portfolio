@@ -144,7 +144,7 @@ export const portfolio = {
         "Frames practical privacy risks around everyday LLM usage and sensitive text sharing."
       ],
       collaborators: "Collaborator details can be added when the final publication metadata is ready.",
-      link: "https://www.linkedin.com/in/indrajit147"
+      link: "https://ieeexplore.ieee.org/document/11491511/"
     }
   ] satisfies ResearchItem[],
 
