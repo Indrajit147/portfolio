@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar items={portfolio.navigation} />
       <main id="main-content">
         <Hero profile={portfolio.profile} stats={portfolio.stats} />
-        <About profile={portfolio.profile} />
+        <About profile={portfolio.profile} education={portfolio.education} />
         <Skills groups={portfolio.skills} />
         <Research research={portfolio.research} />
         <Projects projects={portfolio.projects} />

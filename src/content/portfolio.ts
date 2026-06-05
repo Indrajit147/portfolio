@@ -29,6 +29,12 @@ export type Stat = {
   suffix?: string;
 };
 
+export type EducationEntry = {
+  level: string;
+  institution: string;
+  period: string;
+};
+
 export type SkillGroup = {
   title: string;
   items: string[];
@@ -105,6 +111,24 @@ export const portfolio = {
       resume: "https://www.linkedin.com/in/indrajit147"
     }
   } satisfies Profile,
+
+  education: [
+    {
+      level: "University",
+      institution: "Khulna University of Engineering & Technology",
+      period: "2023-2027"
+    },
+    {
+      level: "College",
+      institution: "Notre Dame College",
+      period: "2020-2022"
+    },
+    {
+      level: "School",
+      institution: "St. Gregory's High School & College",
+      period: "2010-2020"
+    }
+  ] satisfies EducationEntry[],
 
   stats: [
     { label: "Research papers", value: 1, suffix: "+" },
