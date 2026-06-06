@@ -22,9 +22,9 @@ const focusAreas = [
 ];
 
 const logoColors = [
-  "border-emerald-300/70 bg-emerald-400/15 text-emerald-100",
-  "border-sky-300/70 bg-sky-400/15 text-sky-100",
-  "border-amber-300/70 bg-amber-400/15 text-amber-100"
+  "border-emerald-500/50 bg-emerald-500/10 text-emerald-700 dark:border-emerald-300/70 dark:bg-emerald-400/15 dark:text-emerald-100",
+  "border-sky-500/50 bg-sky-500/10 text-sky-700 dark:border-sky-300/70 dark:bg-sky-400/15 dark:text-sky-100",
+  "border-amber-500/50 bg-amber-500/10 text-amber-700 dark:border-amber-300/70 dark:bg-amber-400/15 dark:text-amber-100"
 ];
 
 export function About({
@@ -74,12 +74,12 @@ export function About({
           </div>
         </div>
 
-        <Reveal className="mt-12 overflow-hidden rounded-lg border border-slate-800 bg-slate-950 px-5 py-12 text-white shadow-glow sm:px-8 lg:px-12">
+        <Reveal className="mt-12 overflow-hidden rounded-lg border border-border/80 bg-card/80 px-5 py-12 text-foreground shadow-soft backdrop-blur dark:border-slate-800 dark:bg-slate-950 dark:text-white dark:shadow-glow sm:px-8 lg:px-12">
           <div className="text-center">
             <p className="text-xs font-black uppercase tracking-[0.5em] text-primary">
               Education
             </p>
-            <h3 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
+            <h3 className="mt-5 text-3xl font-black leading-tight text-foreground dark:text-white sm:text-4xl">
               My Educational Institutions
             </h3>
           </div>
@@ -87,14 +87,14 @@ export function About({
           <div className="relative mx-auto mt-12 max-w-4xl">
             <div
               aria-hidden
-              className="absolute bottom-8 left-8 top-8 w-px bg-gradient-to-b from-primary/70 via-slate-700 to-primary/20"
+              className="absolute bottom-8 left-8 top-8 w-px bg-gradient-to-b from-primary/70 via-border to-primary/20 dark:via-slate-700"
             />
 
             <div className="grid gap-5">
               {education.map((entry, index) => (
                 <article
                   key={`${entry.level}-${entry.institution}`}
-                  className="relative grid gap-4 rounded-lg border border-slate-800 bg-slate-900/75 p-5 pl-24 shadow-xl shadow-black/20 transition hover:border-primary/50 hover:bg-slate-900 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:items-center sm:pl-5"
+                  className="relative grid gap-4 rounded-lg border border-border bg-background/70 p-5 pl-24 shadow-soft transition hover:border-primary/50 hover:bg-card dark:border-slate-800 dark:bg-slate-900/75 dark:shadow-xl dark:shadow-black/20 dark:hover:bg-slate-900 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:items-center sm:pl-5"
                 >
                   <div className="absolute left-0 top-5 flex w-16 justify-center sm:static sm:w-auto">
                     <div
@@ -109,18 +109,20 @@ export function About({
                       <span className="rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-primary">
                         {entry.level}
                       </span>
-                      <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/60 px-3 py-1 text-sm font-bold text-slate-300">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/70 px-3 py-1 text-sm font-bold text-muted-foreground dark:border-slate-700 dark:bg-slate-950/60 dark:text-slate-300">
                         <CalendarDays aria-hidden size={15} />
                         {entry.period}
                       </span>
                     </div>
-                    <h4 className="mt-4 text-xl font-black leading-snug text-white sm:text-2xl">
+                    <h4 className="mt-4 text-xl font-black leading-snug text-foreground dark:text-white sm:text-2xl">
                       {entry.institution}
                     </h4>
-                    <p className="mt-3 text-base font-bold leading-7 text-slate-200">
+                    <p className="mt-3 text-base font-bold leading-7 text-foreground/85 dark:text-slate-200">
                       {entry.credential}
                     </p>
-                    <p className="mt-1 text-base leading-7 text-slate-400">{entry.note}</p>
+                    <p className="mt-1 text-base leading-7 text-muted-foreground dark:text-slate-400">
+                      {entry.note}
+                    </p>
                   </div>
                 </article>
               ))}
