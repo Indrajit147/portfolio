@@ -21,6 +21,12 @@ const focusAreas = [
   }
 ];
 
+const logoColors = [
+  "border-emerald-300/70 bg-emerald-400/15 text-emerald-100",
+  "border-sky-300/70 bg-sky-400/15 text-sky-100",
+  "border-amber-300/70 bg-amber-400/15 text-amber-100"
+];
+
 export function About({
   profile,
   education
@@ -68,29 +74,58 @@ export function About({
           </div>
         </div>
 
-        <Reveal className="card mt-4 p-6">
-          <div className="flex items-start gap-3">
-            <GraduationCap aria-hidden className="mt-1 text-primary" size={22} />
-            <div className="w-full">
-              <h3 className="text-xl font-bold text-foreground">Education</h3>
-              <div className="mt-5 grid gap-3 md:grid-cols-3">
-                {education.map((entry) => (
-                  <article
-                    key={`${entry.level}-${entry.institution}`}
-                    className="rounded-md border border-border bg-muted/35 p-4"
-                  >
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">
+        <Reveal className="mt-12 overflow-hidden rounded-lg border border-slate-800 bg-slate-950 px-5 py-12 text-white shadow-glow sm:px-8 lg:px-12">
+          <div className="text-center">
+            <p className="text-xs font-black uppercase tracking-[0.5em] text-primary">
+              Education
+            </p>
+            <h3 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
+              My Educational Institutions
+            </h3>
+          </div>
+
+          <div className="relative mx-auto mt-14 max-w-5xl">
+            <div
+              aria-hidden
+              className="absolute left-8 top-0 h-full w-px bg-slate-700 md:left-1/2 md:-translate-x-1/2"
+            />
+
+            <div className="grid gap-12">
+              {education.map((entry, index) => (
+                <article
+                  key={`${entry.level}-${entry.institution}`}
+                  className="relative grid gap-5 pl-24 md:grid-cols-[1fr_6rem_1fr] md:items-start md:gap-8 md:pl-0"
+                >
+                  <div className="md:text-right">
+                    <p className="text-sm font-black uppercase tracking-[0.22em] text-primary md:hidden">
                       {entry.level}
                     </p>
-                    <h4 className="mt-3 text-base font-bold leading-6 text-foreground">
+                    <h4 className="mt-2 text-2xl font-black leading-snug text-white md:mt-0">
+                      {entry.credential}
+                    </h4>
+                  </div>
+
+                  <div className="absolute left-0 top-0 flex w-16 justify-center md:static md:w-auto">
+                    <div
+                      className={`z-10 flex h-16 w-16 items-center justify-center rounded-full border-2 text-sm font-black shadow-xl ${logoColors[index % logoColors.length]}`}
+                    >
+                      {entry.logo}
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="hidden text-xs font-black uppercase tracking-[0.22em] text-primary md:block">
+                      {entry.level}
+                    </p>
+                    <h4 className="mt-2 text-xl font-black leading-snug text-white">
                       {entry.institution}
                     </h4>
-                    <p className="mt-2 text-sm font-semibold text-muted-foreground">
-                      {entry.period}
-                    </p>
-                  </article>
-                ))}
-              </div>
+                    <div className="mt-4 h-px w-16 bg-slate-800" />
+                    <p className="mt-5 text-base leading-7 text-slate-300">{entry.note}</p>
+                    <p className="mt-2 text-base font-semibold text-slate-400">{entry.period}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </Reveal>

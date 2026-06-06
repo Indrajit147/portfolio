@@ -31,8 +31,11 @@ export type Stat = {
 
 export type EducationEntry = {
   level: string;
+  credential: string;
   institution: string;
   period: string;
+  note: string;
+  logo: string;
 };
 
 export type SkillGroup = {
@@ -70,25 +73,12 @@ export type Achievement = {
   certificateUrl?: string;
 };
 
-export type TimelineEntry = {
-  date: string;
-  title: string;
-  detail: string;
-};
-
-export type Endorsement = {
-  quote: string;
-  name: string;
-  role: string;
-};
-
 export const portfolio = {
   navigation: [
     { label: "About", href: "#about", id: "about" },
     { label: "Skills", href: "#skills", id: "skills" },
     { label: "Research", href: "#research", id: "research" },
     { label: "Projects", href: "#projects", id: "projects" },
-    { label: "Timeline", href: "#timeline", id: "timeline" },
     { label: "Contact", href: "#contact", id: "contact" }
   ] satisfies NavigationItem[],
 
@@ -100,7 +90,7 @@ export const portfolio = {
     tagline:
       "I build applied AI systems and study language, signals, and privacy-preserving intelligence.",
     summary:
-      "I am an undergraduate ECE student at Khulna University of Engineering & Technology with a focus on machine learning, deep learning, NLP, EEG-related research, and practical AI products. My work spans Bangla NLP research, computer vision prototypes, AI assistants, and human-computer interaction projects.",
+      "Indrajit is an undergraduate student in the Department of Electronics and Communication Engineering (ECE) at Khulna University of Engineering & Technology (KUET). He is passionate about Machine Learning, Artificial Intelligence, and research, with published work in Natural Language Processing and ongoing research in EEG analysis, federated learning, incremental learning, and intrusion detection systems. Alongside his academic pursuits, he develops AI-powered applications and software projects, aiming to build innovative solutions that bridge research and real-world impact.",
     portrait: "/images/formal-pic.jpeg",
     links: {
       email: "mailto:indrajitgupta147@gmail.com",
@@ -116,18 +106,27 @@ export const portfolio = {
   education: [
     {
       level: "University",
+      credential: "B.Sc in Engineering, Electronics and Communication Engineering",
       institution: "Khulna University of Engineering & Technology",
-      period: "2023-2027"
+      period: "2023-2027",
+      note: "Department of Electronics and Communication Engineering",
+      logo: "KUET"
     },
     {
       level: "College",
+      credential: "H.S.C",
       institution: "Notre Dame College",
-      period: "2020-2022"
+      period: "2020-2022",
+      note: "Higher Secondary Certificate",
+      logo: "NDC"
     },
     {
       level: "School",
+      credential: "S.S.C",
       institution: "St. Gregory's High School & College",
-      period: "2010-2020"
+      period: "2010-2020",
+      note: "Secondary School Certificate",
+      logo: "SG"
     }
   ] satisfies EducationEntry[],
 
@@ -285,48 +284,5 @@ export const portfolio = {
       title: "Applied AI project portfolio",
       detail: "Built projects across NLP, computer vision, agentic AI, document intelligence, and interaction systems."
     }
-  ] satisfies Achievement[],
-
-  timeline: [
-    {
-      date: "Mar 2025",
-      title: "Computer vision projects",
-      detail: "Completed real-time face recognition and finger-controlled mouse projects using webcam pipelines."
-    },
-    {
-      date: "May 2025",
-      title: "Real-time fire detection",
-      detail: "Built a YOLO, OpenCV, and Streamlit application with audio alerting."
-    },
-    {
-      date: "Jun 2025",
-      title: "CareerMate AI",
-      detail: "Started building a multi-agent career advisor using coordinated AI agents, tools, and guardrails."
-    },
-    {
-      date: "2025",
-      title: "NewsSense",
-      detail: "Added an AI news intelligence agent to the project portfolio."
-    },
-    {
-      date: "2025",
-      title: "PriBan research milestone",
-      detail: "Advanced Bangla privacy-preservation research through dataset and modeling work."
-    }
-  ] satisfies TimelineEntry[],
-
-  endorsements: [
-    {
-      quote:
-        "Endorsements from professors, collaborators, or project reviewers can live here once available.",
-      name: "Future collaborator",
-      role: "Research or engineering mentor"
-    },
-    {
-      quote:
-        "This space is reserved for short recommendations that validate research depth and software execution.",
-      name: "Future reviewer",
-      role: "Academic or technical reviewer"
-    }
-  ] satisfies Endorsement[]
+  ] satisfies Achievement[]
 };

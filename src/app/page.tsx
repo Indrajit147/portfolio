@@ -7,8 +7,6 @@ import { Navbar } from "@/components/navbar";
 import { Projects } from "@/components/projects";
 import { Research } from "@/components/research";
 import { Skills } from "@/components/skills";
-import { Testimonials } from "@/components/testimonials";
-import { Timeline } from "@/components/timeline";
 import { portfolio } from "@/content/portfolio";
 
 export default function Home() {
@@ -22,8 +20,6 @@ export default function Home() {
         <Research research={portfolio.research} />
         <Projects projects={portfolio.projects} />
         <Achievements achievements={portfolio.achievements} />
-        <Timeline entries={portfolio.timeline} />
-        <Testimonials endorsements={portfolio.endorsements} />
         <Contact profile={portfolio.profile} />
       </main>
       <Footer profile={portfolio.profile} navigation={portfolio.navigation} />
