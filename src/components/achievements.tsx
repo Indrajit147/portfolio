@@ -1,7 +1,8 @@
-import { Award, BookOpenCheck, ShieldCheck, Trophy } from "lucide-react";
+import { Award, BookOpenCheck, ExternalLink, ShieldCheck, Trophy } from "lucide-react";
 import type { Achievement } from "@/content/portfolio";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { withBasePath } from "@/lib/base-path";
 
 const icons = [BookOpenCheck, ShieldCheck, Trophy, Award];
 
@@ -24,6 +25,17 @@ export function Achievements({ achievements }: { achievements: Achievement[] }) 
                 <Icon aria-hidden className="text-primary" size={24} />
                 <h3 className="mt-5 text-xl font-bold text-foreground">{achievement.title}</h3>
                 <p className="mt-3 leading-7 text-muted-foreground">{achievement.detail}</p>
+                {achievement.certificateUrl ? (
+                  <a
+                    href={withBasePath(achievement.certificateUrl)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm font-bold text-foreground transition hover:border-primary/50"
+                  >
+                    View certificate
+                    <ExternalLink aria-hidden size={15} />
+                  </a>
+                ) : null}
               </Reveal>
             );
           })}

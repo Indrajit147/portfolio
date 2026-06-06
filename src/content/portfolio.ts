@@ -67,6 +67,7 @@ export type Project = {
 export type Achievement = {
   title: string;
   detail: string;
+  certificateUrl?: string;
 };
 
 export type TimelineEntry = {
@@ -267,15 +268,18 @@ export const portfolio = {
   achievements: [
     {
       title: "Andrew Ng Machine Learning Specialization",
-      detail: "Completed the foundational ML specialization covering core supervised and unsupervised learning workflows."
+      detail: "Completed the foundational ML specialization covering core supervised and unsupervised learning workflows.",
+      certificateUrl: "/certificates/machine-learning-specialization.pdf"
     },
     {
       title: "TensorFlow Developer Specialization Study",
-      detail: "Worked through parts of the TensorFlow Developer curriculum to strengthen deep learning implementation skills."
+      detail: "Worked through parts of the TensorFlow Developer curriculum to strengthen deep learning implementation skills.",
+      certificateUrl: "/certificates/tensorflow.pdf"
     },
     {
-      title: "Published research author",
-      detail: "Research profile includes PriBan and an EEG-related paper submitted to a conference."
+      title: "Mathematical Foundations and Quantum Mechanics Essentials",
+      detail: "Completed a Packt learning certificate covering mathematical foundations and quantum mechanics essentials.",
+      certificateUrl: "/certificates/mathematical-foundation-and-quantum-mechanics-essentials.pdf"
     },
     {
       title: "Applied AI project portfolio",
