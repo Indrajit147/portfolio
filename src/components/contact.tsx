@@ -14,6 +14,16 @@ type FormState = {
 
 type FormErrors = Partial<Record<keyof FormState, string>>;
 
+type SubmitStatus =
+  | {
+      type: "idle";
+      message: "";
+    }
+  | {
+      type: "success" | "error";
+      message: string;
+    };
+
 const initialState: FormState = {
   name: "",
   email: "",
@@ -23,9 +33,14 @@ const initialState: FormState = {
 export function Contact({ profile }: { profile: Profile }) {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({
+    type: "idle",
+    message: ""
+  });
 
   const emailAddress = profile.links.email.replace("mailto:", "");
+  const endpoint = `https://formsubmit.co/ajax/${emailAddress}`;
 
   function validate(values: FormState) {
     const nextErrors: FormErrors = {};
@@ -45,14 +60,58 @@ export function Contact({ profile }: { profile: Profile }) {
     return nextErrors;
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validate(form);
     setErrors(nextErrors);
-    setSent(Object.keys(nextErrors).length === 0);
 
-    if (Object.keys(nextErrors).length === 0) {
+    if (Object.keys(nextErrors).length > 0) {
+      setSubmitStatus({ type: "idle", message: "" });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: "idle", message: "" });
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          message: form.message.trim(),
+          _subject: "New portfolio message from Indrajit Gupta website",
+          _template: "table"
+        })
+      });
+
+      const result = (await response.json().catch(() => null)) as {
+        success?: string;
+        message?: string;
+      } | null;
+
+      if (!response.ok || result?.success === "false") {
+        throw new Error(result?.message ?? "Message delivery failed.");
+      }
+
       setForm(initialState);
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Message sent successfully. If this is the first submission, check your inbox once to activate FormSubmit delivery."
+      });
+    } catch {
+      setSubmitStatus({
+        type: "error",
+        message:
+          "Message could not be delivered right now. Please email me directly from the link beside the form."
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -169,15 +228,23 @@ export function Contact({ profile }: { profile: Profile }) {
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="focus-ring mt-5 inline-flex items-center gap-2 rounded-md bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90"
               >
                 <Send aria-hidden size={18} />
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
 
-              {sent ? (
-                <p className="mt-4 rounded-md border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-semibold text-primary">
-                  Message validated. Connect a backend later to deliver it automatically.
+              {submitStatus.type !== "idle" ? (
+                <p
+                  className={
+                    submitStatus.type === "success"
+                      ? "mt-4 rounded-md border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-semibold text-primary"
+                      : "mt-4 rounded-md border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-600 dark:text-red-400"
+                  }
+                  role="status"
+                >
+                  {submitStatus.message}
                 </p>
               ) : null}
             </form>
